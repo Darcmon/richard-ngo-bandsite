@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next";
+}
+
+.biomain {
+  padding: 0 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #323232;
+}
+.header__container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.header__logo {
+  justify-self: center;
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+
+.nav__list {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  justify-content: space-evenly;
+}
+@media screen and (min-width: 48rem) {
+  .nav__list {
+    justify-content: flex-start;
+  }
+}
+.nav__item {
+  display: block;
+  text-align: center;
+  padding-bottom: 1rem;
+  width: 50%;
+}
+@media screen and (min-width: 48rem) {
+  .nav__item {
+    display: flex;
+    width: inherit;
+  }
+}
+.nav .location {
+  border-bottom: 5px solid #FFFFFF;
+  font-weight: 600;
+}
+.nav__link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.hero {
+  display: flex;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__image {
+  background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/Images/hero-bio.jpg);
+}
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+  padding-left: 1rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.about__header {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+.about__quote {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  font-weight: 600;
+}/*# sourceMappingURL=bio.css.map */
