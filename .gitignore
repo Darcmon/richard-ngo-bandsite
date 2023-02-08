@@ -5,4 +5,5 @@ mockup.txt
 _fonts.scss
 _mixins.scss
 _variables.scss
-_styles.scss
+_global.scss
+_bio.scss
