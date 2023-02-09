@@ -6,4 +6,4 @@ _fonts.scss
 _mixins.scss
 _variables.scss
 _global.scss
-_bio.scss
+bio.scss
