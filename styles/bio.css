@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
@@ -29,6 +29,42 @@ body {
   font-family: "Avenir Next";
 }
 
+h1 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  h2 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 48rem) {
+  p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+}
+
 .biomain {
   padding: 0 1rem;
 }
@@ -40,17 +76,34 @@ body {
   justify-content: center;
   background-color: #323232;
 }
+@media screen and (min-width: 48rem) {
+  .header {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
 .header__container {
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .header__container {
+    justify-content: center;
+    padding: 2rem 4rem 2rem 2rem;
+  }
 }
 .header__logo {
-  justify-self: center;
+  display: flex;
   max-height: 1.25rem;
   max-width: 7.5rem;
 }
 
+@media screen and (min-width: 48rem) {
+  .nav {
+    display: flex;
+  }
+}
 .nav__list {
   display: flex;
   list-style-type: none;
@@ -66,13 +119,16 @@ body {
 .nav__item {
   display: block;
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
   width: 50%;
 }
 @media screen and (min-width: 48rem) {
   .nav__item {
     display: flex;
-    width: inherit;
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    justify-content: center;
   }
 }
 .nav .location {
@@ -86,71 +142,105 @@ body {
 
 .hero {
   display: flex;
-  height: 35vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .hero__image {
   background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/Images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vw;
+  display: flex;
 }
 .hero__title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #FFFFFF;
-  padding-left: 1rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
+  align-self: center;
 }
 
 .about {
   display: flex;
   flex-direction: column;
 }
-.about__header {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-}
 .about__image {
   width: 100%;
-  height: auto;
 }
 .about__quote {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5;
   font-weight: 600;
   margin-bottom: 0;
 }
-.about__bodytitle {
-  font-size: 0.9rem;
+@media screen and (min-width: 48rem) {
+  .about__quote {
+    font-size: 1.774rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+}
+.about__author {
+  font-size: 0.8rem;
   line-height: 1.5;
+  font-weight: 600;
   margin-bottom: 0;
 }
-.about__body {
-  font-size: 0.84rem;
+@media screen and (min-width: 48rem) {
+  .about__author {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+}
+.about__bodytitle {
+  font-size: 0.8rem;
   line-height: 1.5;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .about__bodytitle {
+    font-size: 1.774rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .about__body {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
 }
 
 .gallery {
   display: flex;
   flex-direction: column;
-  background-color: #E1E1E1;
-  flex-wrap: wrap;
-}
-.gallery__header {
-  font-size: 2rem;
-  line-height: 2rem;
-  font-weight: 600;
+  background-color: #FAFAFA;
 }
 .gallery__container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.gallery__photo {
-  padding: 0.5rem;
+@media screen and (min-width: 48rem) {
+  .gallery__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.gallery__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .gallery__image {
+    width: 32.5%;
+    padding: 0.5rem;
+    margin-bottom: 0;
+  }
 }
 
 .footer {
@@ -158,31 +248,92 @@ body {
   flex-direction: column;
   background-color: #323232;
 }
+@media screen and (min-width: 48rem) {
+  .footer__socials {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
 .footer__title {
   color: #FFFFFF;
-  font-weight: 600;
+  overflow: visible;
 }
 .footer__list {
   list-style-type: none;
+  padding-left: 0;
+  padding-right: 8rem;
   display: flex;
-  justify-content: space-evenly;
 }
-.footer__contact {
+.footer__icon {
+  height: 1.5rem;
+  padding-right: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__icon {
+    height: 1.5rem;
+  }
+}
+.footer__logo--top {
+  display: none;
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__logo--top {
+    display: inline;
+  }
+}
+.footer__logo--bottom {
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__logo--bottom {
+    display: none;
+  }
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
   color: #FFFFFF;
   padding-bottom: 0.5rem;
   line-height: 1.5;
 }
-.footer__name {
+.footer__contacts span {
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .footer__contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.footer__text span {
   font-weight: 600;
 }
 .footer__bottom {
   display: flex;
   flex-direction: column;
+  padding-top: 4rem;
 }
 .footer__rights {
   color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 48rem) {
+  .footer__rights {
+    font-size: 1rem;
+  }
 }
 
 .margin {
-  margin: 0 1rem;
+  margin: 0 1rem 1rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .margin {
+    margin: 0rem 3rem 1rem 3rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
