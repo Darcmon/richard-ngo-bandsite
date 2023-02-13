@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+.background {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next";
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  h2 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 48rem) {
+  p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+}/*# sourceMappingURL=shows.css.map */
