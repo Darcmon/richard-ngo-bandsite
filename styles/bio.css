@@ -60,13 +60,9 @@ p {
 }
 @media screen and (min-width: 48rem) {
   p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     line-height: 1.65;
   }
-}
-
-.biomain {
-  padding: 0 1rem;
 }
 
 .header {
@@ -153,17 +149,7 @@ p {
 .hero__title {
   align-self: center;
   margin: 0 1rem;
-}
-@media screen and (min-width: 48rem) {
-  .hero__title {
-    margin: 0rem 3rem 1rem 3rem;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .hero__title {
-    padding: 2rem 0rem 2rem 0rem;
-    margin: 0 2rem 0 6rem;
-  }
+  width: 100%;
 }
 
 .about {
@@ -195,7 +181,7 @@ p {
 }
 @media screen and (min-width: 48rem) {
   .about__quote {
-    font-size: 1.774rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 0;
     font-weight: 600;
@@ -204,9 +190,9 @@ p {
 }
 @media screen and (min-width: 80rem) {
   .about__quote {
-    padding: 1rem 6rem;
+    padding: 1rem 0rem 1rem 6rem;
     margin: 0;
-    width: 90%;
+    width: 75%;
   }
 }
 .about__author {
@@ -283,18 +269,7 @@ p {
   background-color: #FAFAFA;
 }
 .gallery__header {
-  justify-content: flex-start;
-}
-@media screen and (min-width: 48rem) {
-  .gallery__header {
-    margin: 1rem 28rem 1rem 0rem;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .gallery__header {
-    padding: 1rem 6rem;
-    margin: 0;
-  }
+  width: 100%;
 }
 .gallery__container {
   display: flex;
