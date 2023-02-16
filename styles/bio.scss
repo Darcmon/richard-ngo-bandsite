@@ -1,0 +1,430 @@
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@use './partials/fonts' as *;
+@use './partials/global';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: "Avenir Next";
+}
+
+h1{
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    @include tablet{
+        font-size: 4rem;
+    }
+}
+
+h2{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    @include tablet{
+            // padding-top: 2rem;
+            font-size: 2.2rem;
+            line-height: 3rem;
+    }
+}
+
+p{
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    @include tablet{
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $bandsite-black;
+    width: 100%;
+    
+    @include tablet{
+        flex-direction: row;
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+        @include tablet{
+            margin: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop{
+            padding: 2rem 0rem 2rem 0rem;
+            margin: 0 2rem 0 6rem;
+        }
+    }
+    &__logo{
+        display: flex;
+        max-height: 1.25rem;
+        max-width: 7.5rem;
+    }
+}
+
+.nav{
+    @include tablet{
+        display: flex;
+    }
+    &__list{
+        display: flex;
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    &__item{
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            width: 50%;
+
+            @include tablet{
+                display: flex;
+                flex-direction: column;
+                padding: 1rem 0;
+                margin: 0 1rem;
+                justify-content: center;
+            }
+    }
+
+    .location{
+        border-bottom: 3px solid $white;
+        font-weight: 600;
+    }
+    
+    &__link{
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+.hero{
+    display: flex;
+        &__image{
+            display: flex;
+            background-image: linear-gradient(rgba(32,32,32, 0.5), rgba(32, 32, 32, 0.5)),url(../assets/Images/hero-bio.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 60vw;
+        }
+        //     &__image{
+        //         display: flex;
+        //         background-image: linear-gradient(rgba(32,32,32, 0.5), rgba(32, 32, 32, 0.5)),url(../assets/Images/hero-bio.jpg);
+        //         background-size: cover;
+        //         background-position: center;
+        //         background-repeat: no-repeat;
+        //         width: 100%;
+        //         height: 60vw;
+        // }
+        &__title{
+            align-self: center;
+            margin: 0 1rem;
+            width: 100%;
+            // @include tablet{
+            //     margin: 0rem 3rem 1rem 3rem;
+            // }
+            // @include desktop{
+            //     padding: 2rem 0rem 2rem 0rem;
+            //     margin: 0 2rem 0 6rem;
+            // }
+        }
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    &__image{
+        height: auto;
+        object-fit: cover;
+        max-width: 100%;
+        @include tablet{
+            margin: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop{
+            padding: 1rem 6rem;
+            margin: 0 auto;
+        }
+        
+    }
+    &__quote{
+        font-size: 0.8rem;
+        line-height: 1.5;
+        font-weight: 600;
+        margin-bottom: 0;
+        @include tablet{
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+            font-weight: 600;
+            margin: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop{
+            padding: 1rem 0rem 1rem 6rem;
+            margin: 0;
+            width: 75%;
+        }
+    }
+    &__author{
+        font-size: 0.8rem;
+        line-height: 1.5;
+        font-weight: 600;
+        margin-bottom: 0;
+        @include tablet{
+                font-size: 1.25rem;
+                line-height: 1.5;
+                margin-bottom: 0;
+                font-weight: 600;
+        }
+        @include tablet{
+            margin: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop{
+            padding: 0rem 6rem 2rem 6rem;
+            margin: 0;
+        }
+    }
+    &__bodytitle{
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+        font-weight: 600;
+        @include tablet{
+            font-size: 1.774rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+        @include tablet{
+            margin: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop{
+            padding: 1rem 6rem;
+            margin: 0;
+        }
+    }
+    &__body{
+        @include tablet{
+            column-count: 2;
+        }
+        @include tablet{
+            margin: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop{
+            padding: 1rem 6rem;
+            margin: 0 auto;
+        }
+    }
+}
+
+.gallery{
+    display: flex;
+    flex-direction: column;
+    background-color: $alabaster;
+    @include desktop{
+
+    }
+    &__header{
+
+        width: 100%;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 1rem;
+        }
+    }
+    &__image{
+        object-fit: cover;
+        width: 100%;
+        margin-bottom: 1rem;
+        @include tablet{
+            width: 32.8%;
+            padding: 0.5rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.comment{
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    &__title{
+        width: 100%;
+    }
+    &__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    &__profile{
+        margin: 1rem 1rem 0 0;
+    }
+    &__image{
+        border-radius: 50%;
+        height: 3.125rem;
+        width: 3.125rem;
+        object-fit: cover;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+    }
+    &__label{
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $silver;
+    }
+    &__input{
+        border: 1px solid $mercury;
+        border-radius: 0.25rem;
+        background: $alabaster;
+        margin: 0.5rem 0;
+        padding: 0.75rem;
+        width: 14rem;
+        @include tablet{
+            size-adjust: 40;
+        }
+        &--new{
+            border: 1px solid $mercury;
+            border-radius: 0.25rem;
+            background: $alabaster;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            padding-bottom: 3rem;
+        }
+    }
+    &__submit{
+        background: $bandsite-black;
+        color: $white;
+        padding: 0.75rem;
+        font-weight: 600;
+        border: 1px solid $bandsite-black;
+        border-radius: 0.25rem;
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $bandsite-black;
+    @include tablet{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &__socials{
+        @include tablet{
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+
+        }
+    }
+    &__title{
+        color: $white;
+    }
+    &__list{
+        list-style-type: none;
+        padding-left: 0;
+        padding-right: 8rem;
+        display: flex;
+        @include desktop{
+            padding-right: 28rem;
+        }
+    }
+    &__icon{
+        height: 1.5rem;
+        padding-right: 2rem;
+        @include tablet{
+            height: 1.5rem;
+        }
+    }
+    &__logo{
+        &--top{
+            display: none;
+            max-height: 1.25rem;
+            max-width: 7.5rem;
+            @include tablet{
+                display: flex;
+            }
+        }
+        &--bottom{
+            max-height: 1.25rem;
+            max-width: 7.5rem;
+            @include tablet{
+                display: none;
+            }
+        }
+        &--desktop{
+            max-height: 1.25rem;
+            max-width: 7.5rem;
+        }
+    }
+    &__contacts{
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        padding-bottom: 0.5rem;
+        line-height: 1.5;
+        span{
+            font-weight: 600;
+        }
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+        }
+        @include desktop{
+            width: 70%;
+        }
+    }
+    &__text{
+        span{
+            font-weight: 600;
+        }
+    }
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        padding-top: 4rem;
+    }
+    &__rights{
+        color: $white;
+        font-size: 0.7rem;
+        padding: 1rem 0;
+        @include tablet{
+            font-size: 1rem;
+        }
+    }
+
+}
+.margin{
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 auto;
+    @include tablet{
+        padding: 0rem 3rem 1rem 3rem;
+        margin: 0 auto;
+    }
+    @include desktop{
+        padding: 1rem 6rem;
+        margin: 0 auto;
+    }
+}

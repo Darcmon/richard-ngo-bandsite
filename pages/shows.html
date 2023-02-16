@@ -5,25 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/shows.css">
-    <title>BandSite - Home</title>
+    <script src="../scripts/build-shows-page.js" defer></script>
+    <title>BandSite - Shows</title>
 </head>
 <body>
     <header class="header">
-    <div class="header__container" style="max-width: 1280px;"><a href="./index.html"><img class="header__logo" src="/assets/Logo/Logo-bandsite.svg" alt="bandsite logo"></a></div>
+    <div class="header__container" style="max-width: 1280px;"><a href="../index.html"><img class="header__logo" src="/assets/Logo/Logo-bandsite.svg" alt="bandsite logo"></a></div>
         <nav class="nav" style="max-width: 1280px;">
             <ul class="nav__list" style="max-width: 1280px;">
-                <a class="nav__link" href="#"><li class="nav__item location">Biography</a></li>
-                <a class="nav__link" href="#"><li class="nav__item">Shows</a></li>
+                <a class="nav__link" href="../index.html"><li class="nav__item">Biography</a></li>
+                <a class="nav__link" href="/pages/shows.html"><li class="nav__item location">Shows</a></li>
             </ul>
         </nav>
     </header>
+
     <div class="hero">
-        <div class="hero__image">
-                <h1 class="hero__title margin" style="max-width: 1280px;">The Bees Knees</h1>
+        <div class="hero__container margin">
+            <div>
+                <h2 class="hero__title">Beatiful Beasts Album</h2>
+                <h1 class="hero__title">Queen of Yellow x For The Stings</h1>
+            </div>
+            <iframe class="" width="100%" height="50%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/373263023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
         </div>
     </div>
 
-    
+    <section class="shows">
+        <div class="shows__container margin">
+            <h2>Shows</h2>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer__container margin" style="max-width: 1280px;">
@@ -31,11 +41,11 @@
                 <h2 class="footer__title">Get in Touch</h2>
                 <ul class="footer__list">
                     <li><a href="https://www.instagram.com" target="__blank"><img class="footer__icon"
-                                src="./assets/Icons/Icon-instagram.svg" alt="insta icon"></a></li>
+                                src="../assets/Icons/Icon-instagram.svg" alt="insta icon"></a></li>
                     <li><a href="https://www.facebook.com" target="__blank"><img class="footer__icon"
-                                src="./assets/Icons/Icon-facebook.svg" alt="facebook icon"></a></li>
+                                src="../assets/Icons/Icon-facebook.svg" alt="facebook icon"></a></li>
                     <li><a href="https://www.twitter.com" target="__blank"><img class="footer__icon"
-                                src="./assets/Icons/Icon-twitter.svg" alt="twitter icon"></a></li>
+                                src="../assets/Icons/Icon-twitter.svg" alt="twitter icon"></a></li>
                 </ul>
                 <div><a href="./index.html"><img class="footer__logo--top" src="/assets/Logo/Logo-bandsite.svg" alt="bandsite logo"></a></div>
             </div>
@@ -75,7 +85,7 @@
                     </p>
             </div>
             <div class="footer__bottom">
-                <a href="./index.html">
+                <a href="../index.html">
                     <img class="footer__logo--bottom" src="/assets/Logo/Logo-bandsite.svg" alt="bandsite logo" style="width:100%">
                 </a>
                 <div class="footer__rights">Copyright The Bees Knees © 2021 All Rights Reserved</div>

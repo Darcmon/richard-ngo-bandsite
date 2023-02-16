@@ -2,11 +2,6 @@
 *.css.map
 mockup.txt
 .vscode
-_fonts.scss
-_mixins.scss
-_variables.scss
 _global.scss
-bio.scss
-shows.scss
 richard-ngo-bandsite/assets/CopyDeck
 bandsite-copydeck-sprint1.md

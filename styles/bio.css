@@ -138,13 +138,13 @@ p {
   display: flex;
 }
 .hero__image {
+  display: flex;
   background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 60vw;
-  display: flex;
 }
 .hero__title {
   align-self: center;
@@ -298,6 +298,68 @@ p {
   }
 }
 
+.comment {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+}
+.comment__title {
+  width: 100%;
+}
+.comment__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.comment__profile {
+  margin: 1rem 1rem 0 0;
+}
+.comment__image {
+  border-radius: 50%;
+  height: 3.125rem;
+  width: 3.125rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.comment__form {
+  display: flex;
+  flex-direction: column;
+}
+.comment__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #AFAFAF;
+}
+.comment__input {
+  border: 1px solid #E1E1E1;
+  border-radius: 0.25rem;
+  background: #FAFAFA;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  width: 14rem;
+}
+@media screen and (min-width: 48rem) {
+  .comment__input {
+    size-adjust: 40;
+  }
+}
+.comment__input--new {
+  border: 1px solid #E1E1E1;
+  border-radius: 0.25rem;
+  background: #FAFAFA;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  padding-bottom: 3rem;
+}
+.comment__submit {
+  background: #323232;
+  color: #FFFFFF;
+  padding: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #323232;
+  border-radius: 0.25rem;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -309,9 +371,6 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-.footer__container {
-  width: 100%;
 }
 @media screen and (min-width: 48rem) {
   .footer__socials {
@@ -408,11 +467,13 @@ p {
 }
 
 .margin {
-  margin: 0 1rem 1rem 1rem;
+  padding: 0 1rem 1rem 1rem;
+  margin: 0 auto;
 }
 @media screen and (min-width: 48rem) {
   .margin {
-    margin: 0rem 3rem 1rem 3rem;
+    padding: 0rem 3rem 1rem 3rem;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 80rem) {

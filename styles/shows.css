@@ -63,4 +63,235 @@ p {
     font-size: 0.92rem;
     line-height: 1.65;
   }
+}
+
+.margin {
+  margin: 0 1rem 1rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .margin {
+    margin: 0rem 3rem 1rem 3rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .margin {
+    padding: 1rem 6rem;
+    margin: 0 auto;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #323232;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .header {
+    flex-direction: row;
+  }
+}
+.header__container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .header__container {
+    margin: 0rem 3rem 1rem 3rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .header__container {
+    padding: 2rem 0rem 2rem 0rem;
+    margin: 0 2rem 0 6rem;
+  }
+}
+.header__logo {
+  display: flex;
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .nav {
+    display: flex;
+  }
+}
+.nav__list {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+.nav__item {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  width: 50%;
+}
+@media screen and (min-width: 48rem) {
+  .nav__item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    justify-content: center;
+  }
+}
+.nav .location {
+  border-bottom: 3px solid #FFFFFF;
+  font-weight: 600;
+}
+.nav__link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.hero {
+  display: flex;
+  background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/Images/hero-shows.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80vw;
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero__container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero__title {
+  color: #FFFFFF;
+  margin: 0 1rem;
+}
+.shows {
+  display: flex;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #323232;
+}
+@media screen and (min-width: 48rem) {
+  .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .footer__socials {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+.footer__title {
+  color: #FFFFFF;
+}
+.footer__list {
+  list-style-type: none;
+  padding-left: 0;
+  padding-right: 8rem;
+  display: flex;
+}
+@media screen and (min-width: 80rem) {
+  .footer__list {
+    padding-right: 28rem;
+  }
+}
+.footer__icon {
+  height: 1.5rem;
+  padding-right: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__icon {
+    height: 1.5rem;
+  }
+}
+.footer__logo--top {
+  display: none;
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__logo--top {
+    display: flex;
+  }
+}
+.footer__logo--bottom {
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__logo--bottom {
+    display: none;
+  }
+}
+.footer__logo--desktop {
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
+}
+.footer__contacts span {
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .footer__contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .footer__contacts {
+    width: 70%;
+  }
+}
+.footer__text span {
+  font-weight: 600;
+}
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+.footer__rights {
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 48rem) {
+  .footer__rights {
+    font-size: 1rem;
+  }
+}
+
+.margin {
+  margin: 0 1rem 1rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .margin {
+    margin: 0rem 3rem 1rem 3rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .margin {
+    padding: 1rem 6rem;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=shows.css.map */
