@@ -335,6 +335,7 @@ p {
   border-radius: 0.25rem;
   background: #FAFAFA;
   margin: 0.5rem 0;
+  margin-bottom: 1.5rem;
   padding: 0.75rem;
   width: 14rem;
 }
@@ -350,6 +351,7 @@ p {
   margin: 0.5rem 0;
   padding: 0.75rem;
   padding-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 .comment__submit {
   background: #323232;
@@ -363,7 +365,6 @@ p {
 .footer {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: #323232;
 }
 @media screen and (min-width: 48rem) {
@@ -381,6 +382,7 @@ p {
 }
 .footer__title {
   color: #FFFFFF;
+  margin-right: 2rem;
 }
 .footer__list {
   list-style-type: none;

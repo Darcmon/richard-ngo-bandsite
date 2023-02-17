@@ -297,6 +297,7 @@ p{
         border-radius: 0.25rem;
         background: $alabaster;
         margin: 0.5rem 0;
+        margin-bottom: 1.5rem;
         padding: 0.75rem;
         width: 14rem;
         @include tablet{
@@ -309,6 +310,7 @@ p{
             margin: 0.5rem 0;
             padding: 0.75rem;
             padding-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
     }
     &__submit{
@@ -324,7 +326,7 @@ p{
 .footer{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    // width: 100%;
     background-color: $bandsite-black;
     @include tablet{
         flex-direction: row;
@@ -340,6 +342,7 @@ p{
     }
     &__title{
         color: $white;
+        margin-right: 2rem;
     }
     &__list{
         list-style-type: none;

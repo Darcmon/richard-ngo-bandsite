@@ -31,13 +31,14 @@ body {
 
 h1 {
   color: #FFFFFF;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 2rem;
   font-weight: 600;
 }
 @media screen and (min-width: 48rem) {
   h1 {
     font-size: 4rem;
+    line-height: 5rem;
   }
 }
 
@@ -50,6 +51,17 @@ h2 {
   h2 {
     font-size: 2.2rem;
     line-height: 3rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 4rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  h3 {
+    font-size: 1.5rem;
   }
 }
 
@@ -156,29 +168,47 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 80vw;
+  height: 90vw;
+}
+@media screen and (min-width: 48rem) {
+  .hero {
+    height: 70vw;
+  }
 }
 .hero__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (min-width: 80rem) {
+  .hero__container {
+    flex-direction: row;
+  }
+}
 .hero__container div {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (min-width: 80rem) {
+  .hero__container div {
+    width: 50%;
+  }
+}
 .hero__title {
   color: #FFFFFF;
   margin: 0 1rem;
 }
+.hero__soundcloud {
+  width: 70%;
+}
+
 .shows {
   display: flex;
 }
 .footer {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: #323232;
 }
 @media screen and (min-width: 48rem) {
@@ -196,6 +226,7 @@ p {
 }
 .footer__title {
   color: #FFFFFF;
+  margin-right: 2rem;
 }
 .footer__list {
   list-style-type: none;

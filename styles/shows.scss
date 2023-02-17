@@ -14,11 +14,12 @@ body{
 
 h1{
     color: $white;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     line-height: 2rem;
     font-weight: 600;
     @include tablet{
         font-size: 4rem;
+        line-height: 5rem;
     }
 }
 
@@ -30,6 +31,15 @@ h2{
             // padding-top: 2rem;
             font-size: 2.2rem;
             line-height: 3rem;
+    }
+}
+
+h3{
+    font-size: 1rem;
+    line-height: 4rem;
+    font-weight: 600;
+    @include tablet{
+        font-size: 1.5rem;
     }
 }
 
@@ -125,16 +135,24 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 80vw;
-    
+    height: 90vw;
+    @include tablet{
+        height: 70vw;
+    }
         &__container{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            @include desktop{
+                flex-direction: row;
+            }
             div{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                @include desktop{
+                    width: 50%;
+                }
             }
         }
         &__title{
@@ -143,8 +161,7 @@ p{
             // width: 100%;
         }
         &__soundcloud{
-            // display: flex;
-            // align-items: center;
+            width: 70%;
         }
 }
 
@@ -158,7 +175,7 @@ p{
 .footer{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    // width: 100%;
     background-color: $bandsite-black;
     @include tablet{
         flex-direction: row;
@@ -174,6 +191,7 @@ p{
     }
     &__title{
         color: $white;
+        margin-right: 2rem;
     }
     &__list{
         list-style-type: none;
