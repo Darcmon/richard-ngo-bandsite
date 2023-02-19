@@ -22,11 +22,11 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  font-family: "Avenir Next";
 }
 
 body {
   margin: 0;
-  font-family: "Avenir Next";
 }
 
 h1 {
@@ -302,6 +302,7 @@ p {
   max-width: 1280px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .comment__title {
   width: 100%;
@@ -310,6 +311,13 @@ p {
   display: flex;
   flex-direction: row;
   max-width: 768px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 48rem) {
+  .comment__container {
+    padding: 0rem 3rem 1rem 3rem;
+    margin: 0 auto;
+  }
 }
 .comment__container--entry {
   display: flex;
@@ -320,15 +328,13 @@ p {
   justify-content: space-between;
 }
 .comment__profile {
-  margin: 1rem 1rem 0 0;
+  margin-right: 1rem;
 }
 .comment__image {
   border-radius: 50%;
   height: 3.125rem;
   width: 3.125rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  background: #AFAFAF;
+  background-image: linear-gradient(rgb(225, 225, 225), rgb(225, 225, 225));
 }
 .comment__form {
   display: flex;
@@ -346,7 +352,7 @@ p {
   margin: 0.5rem 0;
   margin-bottom: 1.5rem;
   padding: 0.75rem;
-  width: 11rem;
+  width: 14rem;
 }
 @media screen and (min-width: 48rem) {
   .comment__input {
@@ -373,13 +379,19 @@ p {
 @media screen and (min-width: 48rem) {
   .comment__submit {
     width: 10rem;
-    justify-self: flex-end;
+    align-self: end;
   }
 }
 .comment__new {
   display: flex;
   flex-direction: column;
   max-width: 768px;
+}
+@media screen and (min-width: 48rem) {
+  .comment__new {
+    padding: 0rem 3rem 1rem 3rem;
+    margin: 0 auto;
+  }
 }
 .comment__divider {
   border-top: 1px solid #AFAFAF;
@@ -392,6 +404,11 @@ p {
 .comment__timecode {
   color: #AFAFAF;
 }
+.comment__text {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
