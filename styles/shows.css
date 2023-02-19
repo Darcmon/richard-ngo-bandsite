@@ -206,6 +206,19 @@ p {
 .shows {
   display: flex;
 }
+.shows__title {
+  padding: 0 1rem 1rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .shows__title {
+    padding: 0rem 3rem 1rem 3rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__title {
+    margin: 0 auto;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;

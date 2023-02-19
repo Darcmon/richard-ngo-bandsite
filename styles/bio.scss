@@ -272,16 +272,25 @@ p{
     &__container{
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        max-width: 768px;
+        // justify-content: flex-start;
+        &--entry{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__entryheader{
+        display: flex;
+        justify-content: space-between;
     }
     &__profile{
-        margin: 1rem 1rem 0 0;
+        margin-right: 1rem
     }
     &__image{
         border-radius: 50%;
         height: 3.125rem;
         width: 3.125rem;
-        object-fit: cover;
+        background-image: linear-gradient(rgba(AF,AF,AF, 0), rgba(AF, AF, AF, 0)),url(../assets/Images/Mohan-muruge.jpg);
     }
     &__form{
         display: flex;
@@ -299,11 +308,11 @@ p{
         margin: 0.5rem 0;
         margin-bottom: 1.5rem;
         padding: 0.75rem;
-        width: 14rem;
+        width: 11rem;
         @include tablet{
-            size-adjust: 40;
+            width: 32rem;
         }
-        &--new{
+        &--box{
             border: 1px solid $mercury;
             border-radius: 0.25rem;
             background: $alabaster;
@@ -320,13 +329,36 @@ p{
         font-weight: 600;
         border: 1px solid $bandsite-black;
         border-radius: 0.25rem;
+        @include tablet{
+            width: 10rem;
+            justify-self: flex-end;
+        }
+    }
+    &__new{
+        display: flex;
+        flex-direction: column;
+        max-width: 768px;
+    }
+    &__divider{
+        border-top: 1px solid $silver;
+        width: 100%;
+        max-width: 768px;
+    }
+    &__name{
+        font-weight: 600;
+    }
+    &__timecode{
+        color: $silver;
+    }
+    &__text{
+
     }
 }
 
 .footer{
     display: flex;
     flex-direction: column;
-    // width: 100%;
+    width: 100%;
     background-color: $bandsite-black;
     @include tablet{
         flex-direction: row;
@@ -342,12 +374,12 @@ p{
     }
     &__title{
         color: $white;
-        margin-right: 2rem;
+        margin-right: 1.5rem;
     }
     &__list{
         list-style-type: none;
         padding-left: 0;
-        padding-right: 8rem;
+        padding-right: 7rem;
         display: flex;
         @include desktop{
             padding-right: 28rem;
