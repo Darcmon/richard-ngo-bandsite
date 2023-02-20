@@ -5,16 +5,16 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  font-family: "Avenir Next";
 }
 
 body{
     margin: 0;
-    font-family: "Avenir Next";
 }
 
 h1{
     color: $white;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     line-height: 2rem;
     font-weight: 600;
     @include tablet{
@@ -111,14 +111,23 @@ p{
 .hero{
     display: flex;
         &__image{
+            display: flex;
             background-image: linear-gradient(rgba(32,32,32, 0.5), rgba(32, 32, 32, 0.5)),url(../assets/Images/hero-bio.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             width: 100%;
             height: 60vw;
-            display: flex;
         }
+        //     &__image{
+        //         display: flex;
+        //         background-image: linear-gradient(rgba(32,32,32, 0.5), rgba(32, 32, 32, 0.5)),url(../assets/Images/hero-bio.jpg);
+        //         background-size: cover;
+        //         background-position: center;
+        //         background-repeat: no-repeat;
+        //         width: 100%;
+        //         height: 60vw;
+        // }
         &__title{
             align-self: center;
             margin: 0 1rem;
@@ -252,6 +261,109 @@ p{
     }
 }
 
+.comment{
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__title{
+        width: 100%;
+    }
+    &__container{
+        display: flex;
+        flex-direction: row;
+        max-width: 768px;
+        margin: 0 auto;
+        @include tablet{
+            padding: 0rem 3rem 1rem 3rem;
+            margin: 0 auto;
+        }
+        &--entry{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__entryheader{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__profile{
+        margin-right: 1rem
+    }
+    &__image{
+        border-radius: 50%;
+        height: 3.125rem;
+        width: 3.125rem;
+        background-image: linear-gradient(rgba(225,225,225, 1), rgba(225,225,225, 1));
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+    }
+    &__label{
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $silver;
+    }
+    &__input{
+        border: 1px solid $mercury;
+        border-radius: 0.25rem;
+        background: $alabaster;
+        margin: 0.5rem 0;
+        margin-bottom: 1.5rem;
+        padding: 0.75rem;
+        width: 14rem;
+        @include tablet{
+            width: 32rem;
+        }
+        &--box{
+            border: 1px solid $mercury;
+            border-radius: 0.25rem;
+            background: $alabaster;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            padding-bottom: 3rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__submit{
+        background: $bandsite-black;
+        color: $white;
+        padding: 0.75rem;
+        font-weight: 600;
+        border: 1px solid $bandsite-black;
+        border-radius: 0.25rem;
+        @include tablet{
+            width: 10rem;
+            align-self: end;
+        }
+    }
+    &__new{
+        display: flex;
+        flex-direction: column;
+        max-width: 768px;
+        @include tablet{
+            padding: 0rem 3rem 1rem 3rem;
+            margin: 0 auto;
+        }
+    }
+    &__divider{
+        border-top: 1px solid $silver;
+        width: 100%;
+        max-width: 768px;
+    }
+    &__name{
+        font-weight: 600;
+    }
+    &__timecode{
+        color: $silver;
+    }
+    &__text{
+        display: flex;
+        padding-bottom: 1rem;
+    }
+}
+
 .footer{
     display: flex;
     flex-direction: column;
@@ -260,9 +372,6 @@ p{
     @include tablet{
         flex-direction: row;
         flex-wrap: wrap;
-    }
-    &__container{
-        width: 100%;
     }
     &__socials{
         @include tablet{
@@ -274,11 +383,12 @@ p{
     }
     &__title{
         color: $white;
+        margin-right: 1.5rem;
     }
     &__list{
         list-style-type: none;
         padding-left: 0;
-        padding-right: 8rem;
+        padding-right: 7rem;
         display: flex;
         @include desktop{
             padding-right: 28rem;
@@ -351,9 +461,11 @@ p{
 
 }
 .margin{
-    margin: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 auto;
     @include tablet{
-        margin: 0rem 3rem 1rem 3rem;
+        padding: 0rem 3rem 1rem 3rem;
+        margin: 0 auto;
     }
     @include desktop{
         padding: 1rem 6rem;
