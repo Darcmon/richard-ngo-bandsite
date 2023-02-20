@@ -243,6 +243,17 @@ p {
   display: flex;
   flex-direction: column;
   max-width: 1280px;
+  margin: 0 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .shows__realign {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__realign {
+    padding: 1rem 6rem;
+  }
 }
 @media screen and (min-width: 80rem) {
   .shows__realign {
@@ -258,7 +269,9 @@ p {
 }
 @media screen and (min-width: 48rem) {
   .shows__container {
-    padding: 0rem 3rem;
+    padding: 0rem;
+    margin: 0;
+    width: 100%;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -266,11 +279,38 @@ p {
     padding: 0rem;
   }
 }
+.shows__container--header {
+  display: none;
+}
+@media screen and (min-width: 48rem) {
+  .shows__container--header {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+}
+.shows__container:hover {
+  background-color: #E1E1E1;
+}
 .shows__category {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-right: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .shows__category {
+    padding: 0 4rem 0.5rem 0;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__category {
+    padding: 1rem 2.5rem;
+  }
+}
+.shows__category--button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .shows__form {
   display: flex;
@@ -288,7 +328,7 @@ p {
 }
 @media screen and (min-width: 48rem) {
   .shows__labelheader {
-    padding-bottom: 5rem;
+    padding: 0;
   }
 }
 .shows__labelheader--hidden {
@@ -298,7 +338,8 @@ p {
 }
 @media screen and (min-width: 48rem) {
   .shows__labelheader--hidden {
-    display: hidden;
+    visibility: hidden;
+    line-height: 0;
   }
 }
 .shows__date {
@@ -318,6 +359,10 @@ p {
     margin: 0;
   }
 }
+.shows__text--hidden {
+  visibility: hidden;
+  line-height: 0;
+}
 .shows__submit {
   background: #323232;
   color: #FFFFFF;
@@ -333,14 +378,16 @@ p {
     width: 10rem;
   }
 }
+.shows__submit--hidden {
+  visibility: hidden;
+}
 .shows__divider {
   border-top: 1px solid #AFAFAF;
   width: 100%;
-  max-width: 768px;
 }
 @media screen and (min-width: 48rem) {
   .shows__divider {
-    width: 90%;
+    width: 100%;
   }
 }
 @media screen and (min-width: 80rem) {

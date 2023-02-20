@@ -194,30 +194,61 @@ p{
         display: flex;
         flex-direction: column;
         max-width: 1280px;
+        margin: 0 1rem;
         // width: 100%;
+        @include tablet{
+            margin: 0 auto;
+        }
+        @include desktop{
+            padding: 1rem 6rem;
+        }
         @include desktop{
             flex-direction: column;
             width: 75%;
         }
+
     }
     &__container {
         display: flex;
         flex-direction: row;
         max-width: 1280px;
         margin-bottom: 1rem;
-        // width: 100%;
         @include tablet {
-            padding: 0rem 3rem;
+            padding: 0rem;
+            margin: 0;
+            width: 100%;
         }
         @include desktop{
             padding: 0rem;
         }
+        &--header{
+            display: none;
+            @include tablet{
+                display: flex;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    &__container:hover {
+        background-color: $mercury;
     }
     &__category{
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding-right: 1rem;
+        @include tablet {
+            padding: 0 4rem 0.5rem 0;
+        }
+        @include desktop{
+            padding: 1rem 2.5rem;
+        }
+
+        &--button{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
     &__form {
         display: flex;
@@ -233,14 +264,15 @@ p{
         font-weight: 600;
         color: $silver;
         @include tablet{
-            padding-bottom: 5rem;
+            padding: 0;
         }
         &--hidden{
             font-size: 0.75rem;
             font-weight: 600;
             color: $silver;
             @include tablet{
-                display: hidden;
+                visibility: hidden;
+                line-height: 0;
             }
         }
     }
@@ -256,6 +288,10 @@ p{
         margin: 1rem 0rem;
         @include tablet{
             margin: 0;
+        }
+        &--hidden{
+            visibility: hidden;
+            line-height: 0;
         }
         // @include desktop{
         //     margin: 1rem 1.25rem;
@@ -275,13 +311,15 @@ p{
             align-self: center;
             width: 10rem;
         }
+        &--hidden{
+            visibility: hidden;
+        }
     }
     &__divider{
         border-top: 1px solid $silver;
         width: 100%;
-        max-width: 768px;
         @include tablet{
-            width: 90%;
+            width: 100%
         }
         @include desktop{
             max-width: 1280px;

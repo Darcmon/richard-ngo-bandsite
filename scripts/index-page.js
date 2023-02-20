@@ -60,7 +60,6 @@ function formDate(){
 
 function displayComment(){
     let displayNewComment = document.querySelector(".comment__new");
-    console.log(displayNewComment);
     displayNewComment.innerHTML = "";
     let dividerCounter = 0;
 
