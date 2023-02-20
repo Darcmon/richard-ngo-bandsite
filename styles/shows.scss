@@ -1,15 +1,15 @@
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
 @use './partials/fonts' as *;
-@use './partials/global';
+@use './partials/global' as *;
 
 *, *::before, *::after {
   box-sizing: border-box;
+  font-family: "Avenir Next";
 }
 
 body{
     margin: 0;
-    font-family: "Avenir Next";
 }
 
 h1{
@@ -135,7 +135,7 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 150vw;
+    height: 120vw;
     @include tablet{
         height: 70vw;
     }
@@ -157,7 +157,7 @@ p{
         }
         &__title{
             color: $white;
-            margin: 0 1rem;
+            margin: 0;
             // width: 100%;
         }
         &__soundcloud{
@@ -172,19 +172,121 @@ p{
         }
 }
 
-.shows{
+.shows {
     display: flex;
-    &__title{
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    @include desktop{
+        flex-direction: row;
+    }
+    &__title {
         padding: 0 1rem 1rem 1rem;
-        @include tablet{
+        width: 100%;
+        @include tablet {
             padding: 0rem 3rem 1rem 3rem;
         }
-        @include desktop{
-            margin: 0 auto;
+        @include desktop {
+            width: 25%;
         }
     }
-    &__container{
+    &__realign{
+        display: flex;
+        flex-direction: column;
+        max-width: 1280px;
+        // width: 100%;
+        @include desktop{
+            flex-direction: column;
+            width: 75%;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1280px;
+        margin-bottom: 1rem;
+        // width: 100%;
+        @include tablet {
+            padding: 0rem 3rem;
+        }
+        @include desktop{
+            padding: 0rem;
+        }
+    }
+    &__category{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 1rem;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+        }
+        @include desktop{
+        }
+    }
+    &__labelheader{
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $silver;
+        @include tablet{
+            padding-bottom: 5rem;
+        }
+        &--hidden{
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: $silver;
+            @include tablet{
+                display: hidden;
+            }
+        }
+    }
 
+    &__date {
+        margin: 1rem 0;
+        font-weight: 600;
+        @include tablet{
+            margin: 0;
+        }
+    }
+    &__text{
+        margin: 1rem 0rem;
+        @include tablet{
+            margin: 0;
+        }
+        // @include desktop{
+        //     margin: 1rem 1.25rem;
+        // }
+    }
+
+    &__submit {
+        background: $bandsite-black;
+        color: $white;
+        padding: 0.75rem;
+        font-weight: 600;
+        border: 1px solid $bandsite-black;
+        border-radius: 0.25rem;
+        width: 21.5em;
+
+        @include tablet {
+            align-self: center;
+            width: 10rem;
+        }
+    }
+    &__divider{
+        border-top: 1px solid $silver;
+        width: 100%;
+        max-width: 768px;
+        @include tablet{
+            width: 90%;
+        }
+        @include desktop{
+            max-width: 1280px;
+            width: 100%;
+        }
     }
 
 }
@@ -286,11 +388,15 @@ p{
 
 }
 
+.bold{
+    font-weight: 600;
+}
 
 .margin{
     margin: 0 1rem 1rem 1rem;
     @include tablet{
-        margin: 0rem 3rem 1rem 3rem;
+        padding: 0rem 3rem 1rem 3rem;
+        margin: 0 auto;
     }
     @include desktop{
         padding: 1rem 6rem;
