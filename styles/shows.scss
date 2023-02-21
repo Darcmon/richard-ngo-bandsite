@@ -231,9 +231,12 @@ p{
                 width: 100%;
             }
         }
+        &--select{
+            background-color: $mercury;
+        }
     }
     &__container:hover {
-        background-color: $mercury;
+        background-color: $alabaster;
     }
     &__category{
         display: flex;

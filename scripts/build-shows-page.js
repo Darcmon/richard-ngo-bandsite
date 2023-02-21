@@ -1,5 +1,5 @@
-// https://project-1-api.herokuapp.com/?api_key=a63ff70f-ba6d-4468-bbfb-b3f45108bc35
-// {"api_key":"a63ff70f-ba6d-4468-bbfb-b3f45108bc35"};
+const API_URL = "https://project-1-api.herokuapp.com";
+const API_KEY = "a63ff70f-ba6d-4468-bbfb-b3f45108bc35";
 
 const showList = [
     {
@@ -37,20 +37,26 @@ const showList = [
 displayShows();
 
 // Add/remove class based on active state class
-let clickSelector = null;
-const showToggleContainer = document.querySelector(".shows__container--select");
+let clickSelector = false;
+let showToggleContainer = document.querySelector(".shows__container");
+console.log(showToggleContainer);
+showToggleContainer.addEventListener("click", (event) => {
+    console.log(event);
+if (clickSelector === false){
+    clickSelector = true;
+    this.classList.add("shows__container--select");
+    this.classList.remove("shows__container");
 
-// showToggleContainer.addEventListener("click", (event) => {
-// if (){
-// // add
-// }
-// else if (){
-// // remove
-// }
-// else{
-// // replay if statements
-// }
-// });
+}
+else if (clickSelector === true){
+    this.classList.remove("shows__container--select");
+    this.classList.add("shows__container");
+    clickSelector = false;
+}
+else{
+ clickSelector = false;
+}
+});
 
 function displayShows(){
     const showSelect = document.querySelector(".shows");

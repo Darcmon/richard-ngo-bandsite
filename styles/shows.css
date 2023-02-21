@@ -282,8 +282,11 @@ p {
     width: 100%;
   }
 }
-.shows__container:hover {
+.shows__container--select {
   background-color: #E1E1E1;
+}
+.shows__container:hover {
+  background-color: #FAFAFA;
 }
 .shows__category {
   display: flex;

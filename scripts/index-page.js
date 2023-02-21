@@ -24,6 +24,11 @@ formDate();
 
 const commentForm = document.querySelector(".comment__form");
 
+// function fetchComments(comments){
+//     const url = API_URL + `${comments}&apiKey=${API_KEY}`;
+
+// };
+
 commentForm.addEventListener("submit", function(event){
     event.preventDefault();
 
