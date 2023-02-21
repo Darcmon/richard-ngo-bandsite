@@ -310,22 +310,29 @@ p {
 .comment__container {
   display: flex;
   flex-direction: row;
-  max-width: 768px;
+  width: 100%;
+  justify-content: center;
   margin: 0 auto;
 }
 @media screen and (min-width: 48rem) {
   .comment__container {
     padding: 0rem 3rem 1rem 3rem;
-    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__container {
+    width: 100%;
   }
 }
 .comment__container--entry {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .comment__entryheader {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
 }
 .comment__profile {
   margin-right: 1rem;
@@ -365,7 +372,6 @@ p {
   background: #FAFAFA;
   margin: 0.5rem 0;
   padding: 0.75rem;
-  padding-bottom: 3rem;
   margin-bottom: 1.5rem;
 }
 .comment__submit {
@@ -396,17 +402,20 @@ p {
 .comment__divider {
   border-top: 1px solid #AFAFAF;
   width: 100%;
-  max-width: 768px;
 }
 .comment__name {
   font-weight: 600;
+  width: 50%;
 }
 .comment__timecode {
+  display: flex;
+  justify-content: flex-end;
   color: #AFAFAF;
+  width: 50%;
 }
 .comment__text {
-  display: flex;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
 .footer {

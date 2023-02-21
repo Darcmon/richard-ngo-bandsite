@@ -1,3 +1,6 @@
+// https://project-1-api.herokuapp.com/?api_key=a63ff70f-ba6d-4468-bbfb-b3f45108bc35
+// {"api_key":"a63ff70f-ba6d-4468-bbfb-b3f45108bc35"};
+
 const showList = [
     {
         date: 'Mon Sept 06 2023',
@@ -33,12 +36,20 @@ const showList = [
 
 displayShows();
 
-const showToggleContainer = document.querySelector(".shows__container");
+// Add/remove class based on active state class
+let clickSelector = null;
+const showToggleContainer = document.querySelector(".shows__container--select");
 
-// showToggleContainer.addEventListener("click", function(event){
-//     event.preventDefault();
-
-    
+// showToggleContainer.addEventListener("click", (event) => {
+// if (){
+// // add
+// }
+// else if (){
+// // remove
+// }
+// else{
+// // replay if statements
+// }
 // });
 
 function displayShows(){

@@ -158,7 +158,6 @@ p{
         &__title{
             color: $white;
             margin: 0;
-            // width: 100%;
         }
         &__soundcloud{
             width: 100%;
@@ -173,6 +172,169 @@ p{
 }
 
 .shows {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    @include desktop{
+        flex-direction: row;
+    }
+    &__title {
+        padding: 0 1rem 1rem 1rem;
+        width: 100%;
+        @include tablet {
+            padding: 0rem 3rem 1rem 3rem;
+        }
+        @include desktop {
+            width: 25%;
+        }
+    }
+    &__realign{
+        display: flex;
+        flex-direction: column;
+        max-width: 1280px;
+        padding: 0 1rem 1rem 1rem;
+        width: 100%;
+        // margin: 0 1rem;
+        @include tablet{
+            // margin: 0 auto;
+        }
+        @include desktop{
+            // padding: 1rem 6rem;
+        }
+        @include desktop{
+            flex-direction: column;
+            width: 75%;
+        }
+
+    }
+    &__container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1280px;
+        margin-bottom: 1rem;
+        width: 100%;
+        @include tablet {
+            padding: 0rem;
+            margin: 0;
+            width: 100%;
+        }
+        @include desktop{
+            padding: 0rem;
+        }
+        &--header{
+            display: none;
+            @include tablet{
+                display: flex;
+                margin-top: 1.5rem;
+                width: 100%;
+            }
+        }
+    }
+    &__container:hover {
+        background-color: $mercury;
+    }
+    &__category{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include tablet {
+            width: 25%;
+        }
+        @include desktop{
+
+        }
+
+        &--button{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include tablet{
+            flex-direction: row;
+            justify-content: center;
+        }
+        @include desktop{
+        }
+    }
+    &__labelheader{
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $silver;
+        @include tablet{
+            padding: 0;
+        }
+        &--hidden{
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: $silver;
+            @include tablet{
+                visibility: hidden;
+                line-height: 0;
+            }
+        }
+    }
+
+    &__date {
+        margin: 1rem 0;
+        font-weight: 600;
+        @include tablet{
+            margin: 0;
+        }
+    }
+    &__text{
+        margin: 1rem 0rem;
+        @include tablet{
+            margin: 0;
+        }
+        @include desktop{
+            // padding-left: 6rem;
+        }
+        &--hidden{
+            visibility: hidden;
+            line-height: 0;
+        }
+    }
+
+    &__submit {
+        background: $bandsite-black;
+        color: $white;
+        padding: 0.75rem;
+        font-weight: 600;
+        border: 1px solid $bandsite-black;
+        border-radius: 0.25rem;
+        width: 21.5em;
+
+        @include tablet {
+            align-self: center;
+            width: 10rem;
+        }
+        &--hidden{
+            visibility: hidden;
+            padding-right: 4rem;
+        }
+    }
+    &__divider{
+        border-top: 1px solid $silver;
+        width: 100%;
+        @include tablet{
+            width: 100%
+        }
+        @include desktop{
+            max-width: 1280px;
+            width: 100%;
+        }
+    }
+
+}
+
+.shows__grid {
     display: flex;
     flex-direction: column;
     max-width: 1280px;
@@ -195,7 +357,6 @@ p{
         flex-direction: column;
         max-width: 1280px;
         margin: 0 1rem;
-        // width: 100%;
         @include tablet{
             margin: 0 auto;
         }
@@ -228,20 +389,24 @@ p{
                 margin-top: 1.5rem;
             }
         }
+        &--select{
+            background-color: $mercury;
+        }
     }
     &__container:hover {
-        background-color: $mercury;
+        background-color: $alabaster;
     }
     &__category{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-right: 1rem;
+        padding-right: 0rem;
         @include tablet {
-            padding: 0 4rem 0.5rem 0;
+            width: 25%;
+            padding-right:2rem
         }
         @include desktop{
-            padding: 1rem 2.5rem;
+
         }
 
         &--button{
@@ -293,9 +458,6 @@ p{
             visibility: hidden;
             line-height: 0;
         }
-        // @include desktop{
-        //     margin: 1rem 1.25rem;
-        // }
     }
 
     &__submit {
@@ -332,7 +494,6 @@ p{
 .footer{
     display: flex;
     flex-direction: column;
-    // width: 100%;
     background-color: $bandsite-black;
     @include tablet{
         flex-direction: row;
