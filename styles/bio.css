@@ -312,11 +312,11 @@ p {
   flex-direction: row;
   width: 100%;
   justify-content: center;
+  max-width: 768px;
   margin: 0 auto;
 }
 @media screen and (min-width: 48rem) {
   .comment__container {
-    padding: 0rem 3rem 1rem 3rem;
     width: 100%;
   }
 }
@@ -391,7 +391,7 @@ p {
 .comment__new {
   display: flex;
   flex-direction: column;
-  max-width: 768px;
+  max-width: 690px;
 }
 @media screen and (min-width: 48rem) {
   .comment__new {

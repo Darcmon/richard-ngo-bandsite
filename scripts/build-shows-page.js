@@ -1,5 +1,5 @@
 const API_URL = "https://project-1-api.herokuapp.com";
-const API_KEY = "a63ff70f-ba6d-4468-bbfb-b3f45108bc35";
+const API_KEY = "f575abc0-8435-4d40-9875-504561dd74ec";
 
 const showList = [
     {
@@ -37,24 +37,27 @@ const showList = [
 displayShows();
 
 // Add/remove class based on active state class
-let clickSelector = false;
+let clickSelector = null;
 let showToggleContainer = document.querySelector(".shows__container");
+
+
 console.log(showToggleContainer);
 showToggleContainer.addEventListener("click", (event) => {
     console.log(event);
-if (clickSelector === false){
+if (clickSelector === null){
     clickSelector = true;
-    this.classList.add("shows__container--select");
-    this.classList.remove("shows__container");
+    showToggleContainer.classList.add("shows__container--select");
+    showToggleContainer.classList.remove("shows__container");
 
 }
 else if (clickSelector === true){
-    this.classList.remove("shows__container--select");
-    this.classList.add("shows__container");
-    clickSelector = false;
+    showToggleContainer.classList.add("shows__container");
+    selectToggle.classList.remove("shows__container--select");
+    clickSelector = null;
 }
 else{
- clickSelector = false;
+ clickSelector = null;
+ let selectToggle = docusment.querySelector(".shows__container--select");
 }
 });
 
