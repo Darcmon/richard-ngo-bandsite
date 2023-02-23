@@ -1,26 +1,10 @@
 const API_URL = "https://project-1-api.herokuapp.com";
 const API_KEY = "f575abc0-8435-4d40-9875-504561dd74ec";
 
-// const commentLog = [
-//     {
-//         name: 'Sachie Sharma',
-//         date: '02/18/2021',
-//         message: 'This code definitely works. Pizza ipsum dolor amet chicken wing white pizza ham mushrooms Chicago style NY style green bell peppers pineapple mayo thin crust ranch extra cheese. Ranch lasagna personal extra cheese pie mayo pan garlic parmesan.'
-//     },
-//     {
-//         name: 'Richard Ngo',
-//         date: '02/17/2022',
-//         message: 'I wish this code worked. We don’t serve their kind here! What? Your droids. They’ll have to wait outside. We don’t want them here. Listen, why don’t you wait out by the speeder. We don’t want any trouble. I heartily agree with you sir.'
-//     },
-//     {
-//         name: 'Darth Vader',
-//         date: '02/19/2023',
-//         message: 'Nooooooooooooooo. Daijobu kimochi damaru arigatou fuzakeru Oniisan Ureshiii Otaku damasu. Doki doki chikara Senpai Daijobu Oniisan damaru chikara. Daijobu Kawaii Baka Daijobu okasan arigatou Ureshiii.'
-//     }
-// ];
-const commentLog = [];
+let commentLog = [];
 
 let dividerCounter = 0;
+let refreshCounter = 0;
 
 fetchComments();
 
@@ -35,15 +19,7 @@ function fetchComments(){
             response.data.forEach(commentInfo => {
                 commentLog.push(commentInfo);
             });
-
             console.log(commentLog);
-            // for (let i = commentLog.length - 1; i >= 0; i--) {
-            // const getComment = commentLog[0].name;
-            // console.log(getComment);
-            // const getTimestamp = commentLog[0].timestamp;
-            // console.log(getTimestamp);
-
-
 
             let sortByDate = commentLog.sort((commentInfo2, commentInfo1) =>
               commentInfo1.timestamp > commentInfo2.timestamp
@@ -55,26 +31,15 @@ function fetchComments(){
 
             commentLog.forEach(response => {
                 response.timestamp = formDate(response.timestamp);
-                // console.log(response.timestamp);
-
             })
 
             commentLog.forEach(commentInfo => {
                 displayComment(commentInfo);
             })
-
-            // formDate(getTimestamp);
-            // displayComment(getComment);
         })
-    // .then(
-    //     (response) => {
-    //         const getName = response.data.name[1];
-    //         console.log(getName);
-    //     }
-    // )
     .catch(
         (error) => {
-            console.log('hi');
+            console.error("Request failed: ", error);
         })
 };
 
@@ -97,20 +62,30 @@ function formDate(timestamp){
     return month + "/" + day + "/" + year;
     };
 
+function resetComments(){
+  let displayNewComment = document.querySelector(".comment__new");
+  refreshCounter = 0;
+  dividerCounter = 0;
+  fetchComments();
+  if(refreshCounter === 0){
+    refreshCounter++;
+    commentLog = [];
+    displayNewComment.innerHTML = "";
+}
+};
+
 function displayComment(commentInfo){
     let displayNewComment = document.querySelector(".comment__new");
-    // displayNewComment.innerHTML = "";
 
-    // for (let i = commentInfo.length - 1; i >= 0; i--) {
-        let newComment = commentInfo;
-        // console.log(commentLog);
+    let newComment = commentInfo;
 
-        if(dividerCounter === 0){
-        dividerCounter++;    
-        const topDivider = document.createElement("hr");
-        topDivider.classList.add("comment__divider");
-        displayNewComment.appendChild(topDivider);
-    }
+    if(dividerCounter === 0){
+      dividerCounter++;    
+      const topDivider = document.createElement("hr");
+      topDivider.classList.add("comment__divider");
+      displayNewComment.appendChild(topDivider);
+  }
+
         const commentContainerDiv = document.createElement("div");
         commentContainerDiv.classList.add("comment__container");
         displayNewComment.appendChild(commentContainerDiv);
@@ -151,22 +126,32 @@ function displayComment(commentInfo){
         displayNewComment.appendChild(bottomDivider);
 };
 
-
 // POST DATA HERE
-commentForm.addEventListener("submit", function(event){
-    event.preventDefault();
+commentForm.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let date = document.getElementById("date").value;
-    let message = document.getElementById("message").value;
+  let name = document.getElementById("name").value;
+  let comment = document.getElementById("message").value;
 
-    let newComment = {
-        name: name,
-        date: date,
-        message: message
-    };
-    commentLog.push(newComment);
-    displayComment();
-    commentForm.reset();
+  let newComment = {
+    name: name,
+    comment: comment,
+  };
+
+  console.log(newComment);
+
+  const url = API_URL + `/comments/?api_key=${API_KEY}`;
+  axios
+    .post(url, {
+      name: name,
+      comment: comment,
+    })
+    .then((newComment) => {
+      console.log(newComment.data);
+      commentForm.reset();
+      resetComments();
+    })
+    .catch((error) => {
+      console.error("Request failed: ", error);
+    });
 });
-
