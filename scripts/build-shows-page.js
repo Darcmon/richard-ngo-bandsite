@@ -1,65 +1,59 @@
 const API_URL = "https://project-1-api.herokuapp.com";
 const API_KEY = "f575abc0-8435-4d40-9875-504561dd74ec";
 
-const showList = [
-    {
-        date: 'Mon Sept 06 2023',
-        venue: 'Ronald Lane',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Tue Sept 21 2023',
-        venue: 'Pier 3 East',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Oct 15 2023',
-        venue: 'View Lounge',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Sat Nov 06 2023',
-        venue: 'Hyatt Agency',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Nov 26 2023',
-        venue: 'Moscow Center',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Wed Dec 15 2023',
-        venue: 'Press Club',
-        location: 'San Francisco, CA'
-    }
-];
-
-displayShows();
-
-// Add/remove class based on active state class
-let clickSelector = null;
-let showToggleContainer = document.querySelector(".shows__container");
+const showsLog = [];
+fetchShows();
 
 
-console.log(showToggleContainer);
-showToggleContainer.addEventListener("click", (event) => {
-    console.log(event);
-if (clickSelector === null){
-    clickSelector = true;
-    showToggleContainer.classList.add("shows__container--select");
-    showToggleContainer.classList.remove("shows__container");
+function fetchShows(){
+    const url = API_URL + `/showdates/?api_key=${API_KEY}`;
+    axios
+    .get(url)
+    .then(
+        (response) => {
+            response.data.forEach(showsInfo => {
+                showsLog.push(showsInfo);
+            });
 
-}
-else if (clickSelector === true){
-    showToggleContainer.classList.add("shows__container");
-    selectToggle.classList.remove("shows__container--select");
-    clickSelector = null;
-}
-else{
- clickSelector = null;
- let selectToggle = docusment.querySelector(".shows__container--select");
-}
-});
+            showsLog.forEach(response => {
+                response.date = formDate(response.date);
+
+            })
+                
+            displayShows();
+
+        })
+    .then(
+        (response) => {
+            removeSelect();
+        }
+    )
+    .catch(
+        (error) => {
+            console.error("Request failed: ", error);
+        })
+};
+
+function formDate(timestamp){
+
+    let d = new Date(timestamp);
+    // find the weekday
+    let days = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat'];
+    let dayOfWeek = days[d.getDay()]
+    let day = d.getDate();
+    // find the month (short)
+    d.getMonth() + 1;
+    let month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+    let monthShort = month[d.getMonth()]
+    // find the year
+    let year = d.getFullYear();
+
+    if (day < 10) {
+        day = "0" + day;
+      }
+
+    return dayOfWeek + " " + monthShort + " " + day + " " + year;
+};
 
 function displayShows(){
     const showSelect = document.querySelector(".shows");
@@ -67,12 +61,13 @@ function displayShows(){
     showsAlignContainer.className = "shows__realign";
     showSelect.appendChild(showsAlignContainer);
 
-    let displayNextShow = document.querySelector(".shows__realign");
     let headerCounter = 0;
 
+    let displayNextShow = document.querySelector(".shows__realign");
 
     if (headerCounter === 0) {
       headerCounter++;
+
       const showsContainerHeader = document.createElement("div");
       showsContainerHeader.className = "shows__container--header";
 
@@ -89,7 +84,7 @@ function displayShows(){
 
       const showsText1 = document.createElement("p");
       showsText1.className = "shows__text--hidden";
-      showsText1.innerText = "Mon Sept 06 2021";
+    //   showsText1.innerText = "Mon Sept 06 2021";
 
       showsCategory1.appendChild(showsLabel1);
       showsCategory1.appendChild(showsText1);
@@ -105,7 +100,7 @@ function displayShows(){
 
       const showsText2 = document.createElement("p");
       showsText2.className = "shows__text--hidden";
-      showsText2.innerText = "Ronald Lane";
+    //   showsText2.innerText = "Ronald Lane";
 
       showsCategory2.appendChild(showsLabel2);
       showsCategory2.appendChild(showsText2);
@@ -121,7 +116,7 @@ function displayShows(){
 
       const showsText3 = document.createElement("p");
       showsText3.className = "shows__text--hidden";
-      showsText3.innerText = "San Francisco, CA";
+    //   showsText3.innerText = "San Francisco, CA";
 
       showsCategory3.appendChild(showsLabel3);
       showsCategory3.appendChild(showsText3);
@@ -133,7 +128,7 @@ function displayShows(){
       const showsSubmitButton = document.createElement("button");
       showsSubmitButton.className = "shows__submit--hidden";
       showsSubmitButton.setAttribute("type", "submit");
-      showsSubmitButton.innerText = "BUY TICKETS";
+    //   showsSubmitButton.innerText = "BUY TICKETS";
 
       showsCategoryButton.appendChild(showsSubmitButton);
       showsForm.appendChild(showsCategoryButton);
@@ -141,14 +136,21 @@ function displayShows(){
       showsContainerHeader.appendChild(showsForm);
       showsAlignContainer.appendChild(showsContainerHeader);
     }
-
-
-
-    for (let i = 0; i < showList.length; i++) {
-        let newShow = showList[i];
+    showsLog.forEach(
+    (shows) => {
 
 const showToggleContainer = document.createElement("div");
 showToggleContainer.className = "shows__container";
+showToggleContainer.addEventListener("click", (event) => {
+    if(showToggleContainer.classList.contains("shows__container--select"))
+    {
+        showToggleContainer.classList.remove("shows__container--select");
+    }
+    else{
+    showToggleContainer.classList.add("shows__container--select");
+    }
+})
+
 
 const showForm = document.createElement("form");
 showForm.className = "shows__form";
@@ -161,23 +163,23 @@ dateLabel.setAttribute("for", "date");
 dateLabel.textContent = "DATE";
 const dateParam = document.createElement("p");
 dateParam.className = "shows__date";
-dateParam.innerText = newShow.date;
+dateParam.innerText = shows.date;
 dateCategory.appendChild(dateLabel);
 dateCategory.appendChild(dateParam);
 showForm.appendChild(dateCategory);
 
-const venueCategory = document.createElement("div");
-venueCategory.className = "shows__category";
-const venueLabel = document.createElement("label");
-venueLabel.className = "shows__labelheader--hidden";
-venueLabel.setAttribute("for", "");
-venueLabel.textContent = "VENUE";
-const venueParam = document.createElement("p");
-venueParam.className = "shows__text";
-venueParam.innerText = newShow.venue;
-venueCategory.appendChild(venueLabel);
-venueCategory.appendChild(venueParam);
-showForm.appendChild(venueCategory);
+const placeCategory = document.createElement("div");
+placeCategory.className = "shows__category";
+const placeLabel = document.createElement("label");
+placeLabel.className = "shows__labelheader--hidden";
+placeLabel.setAttribute("for", "");
+placeLabel.textContent = "place";
+const placeParam = document.createElement("p");
+placeParam.className = "shows__text";
+placeParam.innerText = shows.place;
+placeCategory.appendChild(placeLabel);
+placeCategory.appendChild(placeParam);
+showForm.appendChild(placeCategory);
 
 const locationCategory = document.createElement("div");
 locationCategory.className = "shows__category";
@@ -187,7 +189,7 @@ locationLabel.setAttribute("for", "");
 locationLabel.textContent = "LOCATION";
 const locationParam = document.createElement("p");
 locationParam.className = "shows__text";
-locationParam.innerText = newShow.location;
+locationParam.innerText = shows.location;
 locationCategory.appendChild(locationLabel);
 locationCategory.appendChild(locationParam);
 showForm.appendChild(locationCategory);
@@ -205,6 +207,16 @@ showToggleContainer.appendChild(showForm);
 showsAlignContainer.appendChild(showToggleContainer);
 showsAlignContainer.appendChild(document.createElement("hr")).className =
   "shows__divider";
+    })
+};
 
-    }
+function removeSelect(){
+    let showToggleContainerAll = document.querySelectorAll(".shows__container");
+    console.log(showToggleContainerAll);
+    showToggleContainerAll.forEach((element) =>{
+    element.addEventListener("click",
+        (element) => {
+                element.classList.remove("shows_container--select");
+        })
+    })
 };

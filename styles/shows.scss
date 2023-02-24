@@ -204,7 +204,7 @@ p{
             // padding: 1rem 6rem;
         }
         @include desktop{
-            flex-direction: column;
+            // flex-direction: column;
             width: 75%;
         }
 
@@ -253,6 +253,8 @@ p{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            width: 20%;
+
         }
     }
     &__form {
