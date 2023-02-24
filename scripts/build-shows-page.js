@@ -23,11 +23,11 @@ function fetchShows(){
             displayShows();
 
         })
-    .then(
-        (response) => {
-            removeSelect();
-        }
-    )
+    // .then(
+    //     (response) => {
+    //         removeSelect();
+    //     }
+    // )
     .catch(
         (error) => {
             console.error("Request failed: ", error);
@@ -147,6 +147,7 @@ showToggleContainer.addEventListener("click", (event) => {
         showToggleContainer.classList.remove("shows__container--select");
     }
     else{
+    removeSelect();
     showToggleContainer.classList.add("shows__container--select");
     }
 })
@@ -214,9 +215,7 @@ function removeSelect(){
     let showToggleContainerAll = document.querySelectorAll(".shows__container");
     console.log(showToggleContainerAll);
     showToggleContainerAll.forEach((element) =>{
-    element.addEventListener("click",
-        (element) => {
-                element.classList.remove("shows_container--select");
-        })
+        console.log(element);
+        element.classList.remove("shows__container--select");
     })
 };
