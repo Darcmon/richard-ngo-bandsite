@@ -4,7 +4,6 @@ const API_KEY = "f575abc0-8435-4d40-9875-504561dd74ec";
 let commentLog = [];
 
 let dividerCounter = 0;
-let refreshCounter = 0;
 
 fetchComments();
 
@@ -64,14 +63,10 @@ function formDate(timestamp){
 
 function resetComments(){
   let displayNewComment = document.querySelector(".comment__new");
-  refreshCounter = 0;
   dividerCounter = 0;
   fetchComments();
-  if(refreshCounter === 0){
-    refreshCounter++;
-    commentLog = [];
-    displayNewComment.innerHTML = "";
-}
+  commentLog = [];
+  displayNewComment.innerHTML = "";
 };
 
 function displayComment(commentInfo){

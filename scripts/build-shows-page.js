@@ -23,11 +23,6 @@ function fetchShows(){
             displayShows();
 
         })
-    // .then(
-    //     (response) => {
-    //         removeSelect();
-    //     }
-    // )
     .catch(
         (error) => {
             console.error("Request failed: ", error);

@@ -145,13 +145,14 @@ p{
             justify-content: center;
             @include desktop{
                 flex-direction: row;
+                justify-content: space-evenly;
             }
             div{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 @include desktop{
-                    width: 50%;
+                    width: 40%;
                 }
             }
         }
@@ -179,6 +180,8 @@ p{
     width: 100%;
     @include desktop{
         flex-direction: row;
+        justify-content: center;
+
     }
     &__title {
         padding: 0 1rem 1rem 1rem;
@@ -187,7 +190,7 @@ p{
             padding: 0rem 3rem 1rem 3rem;
         }
         @include desktop {
-            width: 25%;
+            width: 20%;
         }
     }
     &__realign{
@@ -196,16 +199,8 @@ p{
         max-width: 1280px;
         padding: 0 1rem 1rem 1rem;
         width: 100%;
-        // margin: 0 1rem;
-        @include tablet{
-            // margin: 0 auto;
-        }
         @include desktop{
-            // padding: 1rem 6rem;
-        }
-        @include desktop{
-            // flex-direction: column;
-            width: 75%;
+            width: 65%;
         }
 
     }
@@ -215,13 +210,12 @@ p{
         max-width: 1280px;
         margin-bottom: 1rem;
         width: 100%;
+        border-bottom: 1px solid $mercury;
+        cursor: pointer;
         @include tablet {
-            padding: 0rem;
+            padding: 1rem;
             margin: 0;
             width: 100%;
-        }
-        @include desktop{
-            padding: 0rem;
         }
         &--header{
             display: none;
@@ -235,8 +229,9 @@ p{
             background-color: $mercury;
         }
     }
-    &__container:hover {
+    &__container:not(.shows__container--select):hover {
         background-color: $alabaster;
+        cursor: pointer;
     }
     &__category{
         display: flex;
@@ -245,25 +240,22 @@ p{
         @include tablet {
             width: 25%;
         }
-        @include desktop{
-
-        }
-
         &--button{
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 20%;
-
         }
     }
     &__form {
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding-bottom: 1rem;
         @include tablet{
             flex-direction: row;
             justify-content: center;
+            padding-bottom: 0;
         }
         @include desktop{
         }
@@ -285,7 +277,6 @@ p{
             }
         }
     }
-
     &__date {
         margin: 1rem 0;
         font-weight: 600;
@@ -297,9 +288,6 @@ p{
         margin: 1rem 0rem;
         @include tablet{
             margin: 0;
-        }
-        @include desktop{
-            // padding-left: 6rem;
         }
         &--hidden{
             visibility: hidden;
@@ -315,7 +303,7 @@ p{
         border: 1px solid $bandsite-black;
         border-radius: 0.25rem;
         width: 21.5em;
-
+        cursor: pointer;
         @include tablet {
             align-self: center;
             width: 10rem;
@@ -326,163 +314,7 @@ p{
         }
     }
     &__divider{
-        border-top: 1px solid $silver;
-        width: 100%;
-        @include tablet{
-            width: 100%
-        }
-        @include desktop{
-            max-width: 1280px;
-            width: 100%;
-        }
-    }
-
-}
-
-.shows__grid {
-    display: flex;
-    flex-direction: column;
-    max-width: 1280px;
-    margin: 0 auto;
-    @include desktop{
-        flex-direction: row;
-    }
-    &__title {
-        padding: 0 1rem 1rem 1rem;
-        width: 100%;
-        @include tablet {
-            padding: 0rem 3rem 1rem 3rem;
-        }
-        @include desktop {
-            width: 25%;
-        }
-    }
-    &__realign{
-        display: flex;
-        flex-direction: column;
-        max-width: 1280px;
-        margin: 0 1rem;
-        @include tablet{
-            margin: 0 auto;
-        }
-        @include desktop{
-            padding: 1rem 6rem;
-        }
-        @include desktop{
-            flex-direction: column;
-            width: 75%;
-        }
-
-    }
-    &__container {
-        display: flex;
-        flex-direction: row;
-        max-width: 1280px;
-        margin-bottom: 1rem;
-        @include tablet {
-            padding: 0rem;
-            margin: 0;
-            width: 100%;
-        }
-        @include desktop{
-            padding: 0rem;
-        }
-        &--header{
-            display: none;
-            @include tablet{
-                display: flex;
-                margin-top: 1.5rem;
-            }
-        }
-        &--select{
-            background-color: $mercury;
-        }
-    }
-    &__container:hover {
-        background-color: $alabaster;
-    }
-    &__category{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-right: 0rem;
-        @include tablet {
-            width: 25%;
-            padding-right:2rem
-        }
-        @include desktop{
-
-        }
-
-        &--button{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    }
-    &__form {
-        display: flex;
-        flex-direction: column;
-        @include tablet{
-            flex-direction: row;
-        }
-        @include desktop{
-        }
-    }
-    &__labelheader{
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: $silver;
-        @include tablet{
-            padding: 0;
-        }
-        &--hidden{
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: $silver;
-            @include tablet{
-                visibility: hidden;
-                line-height: 0;
-            }
-        }
-    }
-
-    &__date {
-        margin: 1rem 0;
-        font-weight: 600;
-        @include tablet{
-            margin: 0;
-        }
-    }
-    &__text{
-        margin: 1rem 0rem;
-        @include tablet{
-            margin: 0;
-        }
-        &--hidden{
-            visibility: hidden;
-            line-height: 0;
-        }
-    }
-
-    &__submit {
-        background: $bandsite-black;
-        color: $white;
-        padding: 0.75rem;
-        font-weight: 600;
-        border: 1px solid $bandsite-black;
-        border-radius: 0.25rem;
-        width: 21.5em;
-
-        @include tablet {
-            align-self: center;
-            width: 10rem;
-        }
-        &--hidden{
-            visibility: hidden;
-        }
-    }
-    &__divider{
+        display: none;
         border-top: 1px solid $silver;
         width: 100%;
         @include tablet{
