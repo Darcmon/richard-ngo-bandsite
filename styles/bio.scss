@@ -265,6 +265,12 @@ width: 90%;
     display: flex;
     flex-direction: column;
     width: 90%;
+    @include tablet{
+        width: 85%;
+    }
+    @include desktop{
+        width: 100%;
+    }
     &__title{
         width: 100%;
     }
@@ -274,15 +280,8 @@ width: 90%;
         width: 100%;
         justify-content: center;
         max-width: 768px;
-        margin: 0 auto;
-        @include tablet{
-            width: 100%;
-
-        }
-        @include desktop{
-            width: 100%;
-
-        }
+        margin: 0 auto 1rem auto;
+        border-bottom: 1px solid $mercury;
         &--entry{
             display: flex;
             flex-direction: column;
@@ -338,6 +337,7 @@ width: 90%;
         font-weight: 600;
         border: 1px solid $bandsite-black;
         border-radius: 0.25rem;
+        margin-bottom: 1rem;
         @include tablet{
             width: 10rem;
             align-self: end;
@@ -346,15 +346,11 @@ width: 90%;
     &__new{
         display: flex;
         flex-direction: column;
-        max-width: 690px;
+        max-width: 768px;
         @include tablet{
-            padding: 0rem 3rem 1rem 3rem;
+            max-width: 556px;
             margin: 0 auto;
         }
-    }
-    &__divider{
-        border-top: 1px solid $mercury;
-        width: 100%;
     }
     &__name{
         font-weight: 600;
@@ -379,9 +375,6 @@ width: 90%;
     @include tablet{
         flex-direction: row;
         flex-wrap: wrap;
-    }
-    &__container{
-        width: 90%;
     }
     &__socials{
         @include tablet{

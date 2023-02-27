@@ -3,8 +3,6 @@ const API_KEY = "f575abc0-8435-4d40-9875-504561dd74ec";
 
 let commentLog = [];
 
-let dividerCounter = 0;
-
 fetchComments();
 
 const commentForm = document.querySelector(".comment__form");
@@ -74,13 +72,6 @@ function displayComment(commentInfo){
 
     let newComment = commentInfo;
 
-    if(dividerCounter === 0){
-      dividerCounter++;    
-      const topDivider = document.createElement("hr");
-      topDivider.classList.add("comment__divider");
-      displayNewComment.appendChild(topDivider);
-  }
-
         const commentContainerDiv = document.createElement("div");
         commentContainerDiv.classList.add("comment__container");
         displayNewComment.appendChild(commentContainerDiv);
@@ -115,10 +106,6 @@ function displayComment(commentInfo){
         messageParam.classList.add("comment__text");
         messageParam.innerText = newComment.comment;
         entryContainerDiv.appendChild(messageParam);
-
-        const bottomDivider = document.createElement("hr");
-        bottomDivider.classList.add("comment__divider");
-        displayNewComment.appendChild(bottomDivider);
 };
 
 // POST DATA HERE
